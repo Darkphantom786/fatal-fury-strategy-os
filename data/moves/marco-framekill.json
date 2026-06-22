@@ -1,36 +1,44 @@
 {
   "character": "Marco Rodrigues",
 
+  "verificationStatus": "Estimated",
+
   "frameKillMoves": [
 
     {
       "move": "5A Whiff",
-      "frames": 18
+      "frames": 18,
+      "category": "Normal"
     },
 
     {
       "move": "5B Whiff",
-      "frames": 24
+      "frames": 24,
+      "category": "Normal"
     },
 
     {
       "move": "2A Whiff",
-      "frames": 16
+      "frames": 16,
+      "category": "Normal"
     },
 
     {
       "move": "2B Whiff",
-      "frames": 22
+      "frames": 22,
+      "category": "Normal"
     },
 
     {
       "move": "236A Whiff",
-      "frames": 45
+      "frames": 45,
+      "category": "Special"
     },
 
     {
       "move": "236B Whiff",
-      "frames": 49
+      "frames": 49,
+      "category": "Special"
     }
 
   ]
