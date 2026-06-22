@@ -1,48 +1,40 @@
+document.addEventListener("DOMContentLoaded", async () => {
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadCharacter();
-});
+    const character = await loadCharacter("marco");
 
-async function loadCharacter() {
-
-    try {
-
-        const response = await fetch("./data/marco.json");
-        const data = await response.json();
-
-        document.getElementById("character-info").innerHTML = `
-            <div class="card">
-
-                <h2>${data.name}</h2>
-
-                <p><strong>Game:</strong> ${data.game}</p>
-
-                <p><strong>Style:</strong> ${data.style}</p>
-
-                <p><strong>Difficulty:</strong> ${data.difficulty}</p>
-
-                <h3>Strengths</h3>
-
-                <ul>
-                    ${data.strengths.map(item => `<li>${item}</li>`).join("")}
-                </ul>
-
-                <br>
-
-                <h3>Weaknesses</h3>
-
-                <ul>
-                    ${data.weaknesses.map(item => `<li>${item}</li>`).join("")}
-                </ul>
-
-            </div>
-        `;
-
-    } catch (error) {
+    if (!character) {
 
         document.getElementById("character-info").innerHTML =
-            `<div class="card">Failed to load character data.</div>`;
+            "<div class='card'>Character Not Found</div>";
 
-        console.error(error);
+        return;
     }
-}
+
+    document.getElementById("character-info").innerHTML = `
+
+        <div class="card">
+
+            <h2>${character.name}</h2>
+
+            <p><strong>Game:</strong> ${character.game}</p>
+
+            <p><strong>Style:</strong> ${character.profile.style}</p>
+
+            <p><strong>Difficulty:</strong> ${character.profile.difficulty}</p>
+
+            <h3>Strengths</h3>
+
+            <ul>
+                ${character.strengths.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h3>Weaknesses</h3>
+
+            <ul>
+                ${character.weaknesses.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+        </div>
+
+    `;
+});
