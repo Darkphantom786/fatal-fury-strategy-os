@@ -1,3 +1,4 @@
+alert("APP LOADED");
 document.addEventListener("DOMContentLoaded", async () => {
 
     const character = await loadCharacter("marco");
