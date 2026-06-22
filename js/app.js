@@ -79,7 +79,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     document.getElementById("moves-container").innerHTML = `
+...
+`;
 
+initializeFrameKillEngine();
         <div class="card">
 
             <h2>Marco Frame Data Database</h2>
