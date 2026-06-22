@@ -1,3 +1,4 @@
+alert("DATABASE.JS LOADED");
 async function loadCharacter(characterId) {
 
     try {
