@@ -41,79 +41,69 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
-    // Move Database Section
+    // Move Database
 
     if (!moveData) {
 
         document.getElementById("moves-container").innerHTML =
             "<div class='card'>Move Database Not Found</div>";
 
-        return;
-    }
+    } else {
 
-    let tableRows = "";
+        let tableRows = "";
 
-    moveData.moves.forEach(move => {
+        moveData.moves.forEach(move => {
 
-        tableRows += `
+            tableRows += `
 
-            <tr>
+                <tr>
+                    <td>${move.notation || "-"}</td>
+                    <td>${move.moveName || "-"}</td>
+                    <td>${move.startup ?? "-"}</td>
+                    <td>${move.hitAdvantage ?? "-"}</td>
+                    <td>${move.blockAdvantage ?? "-"}</td>
+                    <td>${move.category || "-"}</td>
+                    <td>${move.verificationStatus || "-"}</td>
+                </tr>
 
-                <td>${move.notation || "-"}</td>
+            `;
+        });
 
-                <td>${move.moveName || "-"}</td>
+        document.getElementById("moves-container").innerHTML = `
 
-                <td>${move.startup ?? "-"}</td>
+            <div class="card">
 
-                <td>${move.hitAdvantage ?? "-"}</td>
+                <h2>Marco Frame Data Database</h2>
 
-                <td>${move.blockAdvantage ?? "-"}</td>
+                <table>
 
-                <td>${move.category || "-"}</td>
+                    <thead>
 
-                <td>${move.verificationStatus || "-"}</td>
+                        <tr>
+                            <th>Notation</th>
+                            <th>Move</th>
+                            <th>Startup</th>
+                            <th>Hit</th>
+                            <th>Block</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                        </tr>
 
-            </tr>
+                    </thead>
+
+                    <tbody>
+
+                        ${tableRows}
+
+                    </tbody>
+
+                </table>
+
+            </div>
 
         `;
-    });
+    }
 
-    document.getElementById("moves-container").innerHTML = `
-...
-`;
+    initializeFrameKillEngine();
 
-initializeFrameKillEngine();
-        <div class="card">
-
-            <h2>Marco Frame Data Database</h2>
-
-            <table border="1" width="100%">
-
-                <thead>
-
-                    <tr>
-
-                        <th>Notation</th>
-                        <th>Move</th>
-                        <th>Startup</th>
-                        <th>Hit</th>
-                        <th>Block</th>
-                        <th>Category</th>
-                        <th>Status</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    ${tableRows}
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    `;
 });
