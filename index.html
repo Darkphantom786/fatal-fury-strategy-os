@@ -31,11 +31,34 @@
 
 <div id="moves-container">
 </div>
+<div class="engine-box">
 
+    <h2>Frame Kill Route Generator</h2>
+
+    <input
+        type="number"
+        id="knockdownFrames"
+        placeholder="Enter Knockdown Frames">
+
+    <button id="frameKillButton">
+
+        Generate Route
+
+    </button>
+
+    <div id="frameKillResults"
+         class="result-box">
+
+        Waiting For Input...
+
+    </div>
+
+</div>
 </main>
 
 <script src="js/database.js"></script>
 <script src="js/moves.js"></script>
+<script src="js/framekill.js"></script>
 <script src="js/app.js"></script>
 
 </body>
