@@ -31,7 +31,9 @@ async function initializeFrameKillEngine() {
             return;
         }
 
-        let foundRoute = null;
+        let routes = [];
+
+        // TWO MOVE SEARCH
 
         for (let moveA of data.frameKillMoves) {
 
@@ -43,35 +45,75 @@ async function initializeFrameKillEngine() {
                     targetFrames
                 ) {
 
-                    foundRoute = `
-                        ${moveA.move}
-                        (${moveA.frames}f)
-
+                    routes.push(
+                        `${moveA.move} (${moveA.frames}f)
                         +
-
-                        ${moveB.move}
-                        (${moveB.frames}f)
-
+                        ${moveB.move} (${moveB.frames}f)
                         =
-
-                        ${targetFrames}f
-                    `;
-
-                    break;
+                        ${targetFrames}f`
+                    );
                 }
             }
+        }
 
-            if (foundRoute) break;
+        // THREE MOVE SEARCH
+
+        for (let moveA of data.frameKillMoves) {
+
+            for (let moveB of data.frameKillMoves) {
+
+                for (let moveC of data.frameKillMoves) {
+
+                    if (
+                        moveA.frames +
+                        moveB.frames +
+                        moveC.frames ===
+                        targetFrames
+                    ) {
+
+                        routes.push(
+                            `${moveA.move} (${moveA.frames}f)
+                            +
+                            ${moveB.move} (${moveB.frames}f)
+                            +
+                            ${moveC.move} (${moveC.frames}f)
+                            =
+                            ${targetFrames}f`
+                        );
+                    }
+                }
+            }
+        }
+
+        if (routes.length === 0) {
+
+            document.getElementById(
+                "frameKillResults"
+            ).innerHTML =
+                "No Route Found";
+
+            return;
         }
 
         document.getElementById(
             "frameKillResults"
         ).innerHTML =
-            foundRoute ||
-            "No Route Found";
+
+            `
+            <strong>Data Status:</strong>
+            ${data.verificationStatus}
+
+            <br><br>
+
+            <strong>Routes Found:</strong>
+
+            <br><br>
+
+            ${routes.join("<hr>")}
+            `;
     });
 
     console.log(
-        "Frame Kill Engine Ready"
+        "Frame Kill Generator V2 Ready"
     );
 }
