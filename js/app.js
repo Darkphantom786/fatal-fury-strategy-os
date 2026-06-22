@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", async () => {
 
     const character = await loadCharacter("marco");
