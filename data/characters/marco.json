@@ -1,0 +1,22 @@
+{
+  "id": "marco",
+  "name": "Marco Rodrigues",
+  "game": "Fatal Fury: City of the Wolves",
+
+  "profile": {
+    "style": "Kyokugen Karate",
+    "difficulty": "Intermediate"
+  },
+
+  "strengths": [
+    "Strong Pressure",
+    "Excellent Damage",
+    "Reliable Anti-Air",
+    "Good Corner Carry"
+  ],
+
+  "weaknesses": [
+    "Requires Matchup Knowledge",
+    "Can Struggle Against Zoning"
+  ]
+}
