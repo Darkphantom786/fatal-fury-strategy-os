@@ -104,7 +104,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
-    initializeFrameKillEngine();
-    initializeMeatyEngine();
+    console.log("Before Frame Kill");
+
+initializeFrameKillEngine();
+
+console.log("Before Meaty");
+
+initializeMeatyEngine();
+
+console.log("After Meaty");
 
 });
