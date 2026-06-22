@@ -1,0 +1,37 @@
+{
+  "character": "Marco Rodrigues",
+
+  "frameKillMoves": [
+
+    {
+      "move": "5A Whiff",
+      "frames": 18
+    },
+
+    {
+      "move": "5B Whiff",
+      "frames": 24
+    },
+
+    {
+      "move": "2A Whiff",
+      "frames": 16
+    },
+
+    {
+      "move": "2B Whiff",
+      "frames": 22
+    },
+
+    {
+      "move": "236A Whiff",
+      "frames": 45
+    },
+
+    {
+      "move": "236B Whiff",
+      "frames": 49
+    }
+
+  ]
+}
