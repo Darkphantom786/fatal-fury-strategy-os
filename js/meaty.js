@@ -1,5 +1,11 @@
 function initializeMeatyEngine() {
 
+    alert("Meaty Engine Loaded");
+
+    const button =
+        document.getElementById("meatyButton");
+function initializeMeatyEngine() {
+
     const button =
         document.getElementById("meatyButton");
 
