@@ -1,5 +1,87 @@
 {
   "character": "Marco Rodrigues",
   "version": "1.0",
-  "moves": []
+  "moves": [
+
+    {
+      "moveName": "Close A",
+      "notation": "cl.A",
+      "category": "Close Normal",
+
+      "startup": 4,
+      "active": null,
+      "recovery": null,
+
+      "hitAdvantage": 2,
+      "blockAdvantage": 0,
+
+      "damage": 25,
+
+      "knockdownType": null,
+      "invulnerability": null,
+
+      "verificationStatus": "Verified"
+    },
+
+    {
+      "moveName": "Close B",
+      "notation": "cl.B",
+      "category": "Close Normal",
+
+      "startup": 7,
+      "active": null,
+      "recovery": null,
+
+      "hitAdvantage": 1,
+      "blockAdvantage": -2,
+
+      "damage": 40,
+
+      "knockdownType": null,
+      "invulnerability": null,
+
+      "verificationStatus": "Verified"
+    },
+
+    {
+      "moveName": "Close C",
+      "notation": "cl.C",
+      "category": "Close Normal",
+
+      "startup": 6,
+      "active": null,
+      "recovery": null,
+
+      "hitAdvantage": 3,
+      "blockAdvantage": -1,
+
+      "damage": 65,
+
+      "knockdownType": null,
+      "invulnerability": null,
+
+      "verificationStatus": "Verified"
+    },
+
+    {
+      "moveName": "Close D",
+      "notation": "cl.D",
+      "category": "Close Normal",
+
+      "startup": 9,
+      "active": null,
+      "recovery": null,
+
+      "hitAdvantage": 4,
+      "blockAdvantage": -3,
+
+      "damage": 80,
+
+      "knockdownType": null,
+      "invulnerability": null,
+
+      "verificationStatus": "Verified"
+    }
+
+  ]
 }
