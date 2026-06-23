@@ -1,5 +1,7 @@
 function initializeProfileEngine() {
 
+    alert("PROFILE ENGINE STARTED");
+
     const button =
         document.getElementById(
             "profileButton"
