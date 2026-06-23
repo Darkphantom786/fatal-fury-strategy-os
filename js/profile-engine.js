@@ -29,9 +29,12 @@ alert(JSON.stringify(data));
     );
 
 alert(JSON.stringify(profile));
-            document.getElementById(
-                "profileResults"
-            ).innerHTML = `
+            console.log(profile);
+alert(profile.name);
+
+document.getElementById(
+    "profileResults"
+).innerHTML = `
 
                 <strong>Name:</strong>
                 ${profile.name}
