@@ -114,5 +114,6 @@ initializeMeatyEngine();
 
 console.log("After Meaty");
 initializeSafeJumpEngine();
+initializeProfileEngine();
 
 });
