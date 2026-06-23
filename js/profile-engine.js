@@ -8,13 +8,15 @@ function initializeProfileEngine() {
         );
 
     button.addEventListener(
-        "click",
-        async () => {
+    "click",
+    async () => {
 
-            const name =
-                document.getElementById(
-                    "profileSelect"
-                ).value;
+        alert("BUTTON WORKING");
+
+        const name =
+            document.getElementById(
+                "profileSelect"
+            ).value;
 
             const data =
     await loadProfiles();
