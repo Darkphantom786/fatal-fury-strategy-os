@@ -1,62 +1,97 @@
 function initializeSafeJumpEngine() {
 
     const button =
-        document.getElementById("safeJumpButton");
+        document.getElementById(
+            "safeJumpButton"
+        );
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+        "click",
+        async () => {
 
-        const knockdown =
-            parseInt(
+            const knockdown =
+                parseInt(
+                    document.getElementById(
+                        "safeJumpKnockdown"
+                    ).value
+                );
+
+            const jumpDuration =
+                parseInt(
+                    document.getElementById(
+                        "safeJumpDuration"
+                    ).value
+                );
+
+            const opponentName =
                 document.getElementById(
-                    "safeJumpKnockdown"
-                ).value
-            );
+                    "opponentSelect"
+                ).value;
 
-        const jumpDuration =
-            parseInt(
+            const opponentData =
+                await loadOpponentData();
+
+            const opponent =
+                opponentData.characters.find(
+                    c =>
+                    c.name === opponentName
+                );
+
+            if (
+                isNaN(knockdown) ||
+                isNaN(jumpDuration)
+            ) {
+
                 document.getElementById(
-                    "safeJumpDuration"
-                ).value
-            );
+                    "safeJumpResults"
+                ).innerHTML =
+                    "Enter Valid Values";
 
-        if (
-            isNaN(knockdown) ||
-            isNaN(jumpDuration)
-        ) {
+                return;
+            }
+
+            const remaining =
+                knockdown -
+                jumpDuration;
+
+            const safe =
+                remaining >=
+                opponent.fastestDP;
 
             document.getElementById(
                 "safeJumpResults"
-            ).innerHTML =
-                "Enter Valid Values";
+            ).innerHTML = `
 
-            return;
+                <strong>Opponent:</strong>
+                ${opponent.name}
+
+                <br><br>
+
+                <strong>Fastest DP:</strong>
+                ${opponent.fastestDP}f
+
+                <br><br>
+
+                <strong>Remaining Frames:</strong>
+                ${remaining}f
+
+                <br><br>
+
+                <strong>Status:</strong>
+
+                ${
+                    safe
+                    ?
+                    "SAFE JUMP CONFIRMED"
+                    :
+                    "NOT SAFE"
+                }
+
+            `;
         }
-
-        const remaining =
-            knockdown -
-            jumpDuration;
-
-        document.getElementById(
-            "safeJumpResults"
-        ).innerHTML = `
-
-            <strong>Knockdown:</strong>
-            ${knockdown}f
-
-            <br><br>
-
-            <strong>Jump Duration:</strong>
-            ${jumpDuration}f
-
-            <br><br>
-
-            <strong>Remaining Frames:</strong>
-            ${remaining}f
-
-        `;
-    });
+    );
 
     console.log(
-        "Safe Jump Engine Ready"
+        "Safe Jump Engine V2 Ready"
     );
 }
