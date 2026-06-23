@@ -1,0 +1,20 @@
+{
+  "characters": [
+
+    {
+      "name": "Terry Bogard",
+      "fastestDP": 5
+    },
+
+    {
+      "name": "Rock Howard",
+      "fastestDP": 6
+    },
+
+    {
+      "name": "Kain Heinlein",
+      "fastestDP": 7
+    }
+
+  ]
+}
