@@ -113,5 +113,6 @@ console.log("Before Meaty");
 initializeMeatyEngine();
 
 console.log("After Meaty");
+initializeSafeJumpEngine();
 
 });
