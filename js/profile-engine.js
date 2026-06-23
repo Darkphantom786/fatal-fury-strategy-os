@@ -17,7 +17,9 @@ function initializeProfileEngine() {
                 ).value;
 
             const data =
-                await loadProfiles();
+    await loadProfiles();
+
+alert(JSON.stringify(data));
 
             const profile =
                 data.profiles.find(
