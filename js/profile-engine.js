@@ -22,10 +22,11 @@ function initializeProfileEngine() {
 alert(JSON.stringify(data));
 
             const profile =
-                data.profiles.find(
-                    p => p.name === name
-                );
+    data.profiles.find(
+        p => p.name === name
+    );
 
+alert(JSON.stringify(profile));
             document.getElementById(
                 "profileResults"
             ).innerHTML = `
