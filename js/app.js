@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
+
 initializeFrameKillEngine();
 initializeMeatyEngine();
 initializeSafeJumpEngine();
@@ -112,4 +113,90 @@ initializeProfileEngine();
 initializeFallbackEngine();
 initializeDualThreatEngine();
 initializeSetupLibrary();
+initializeMatchupHub();
+
+async function initializeMatchupHub() {
+
+```
+const select = document.getElementById("matchup-select");
+
+if (!select) return;
+
+select.addEventListener("change", async () => {
+
+    if (!select.value) return;
+
+    try {
+
+        const response =
+        await fetch(`data/matchups/${select.value}.json`);
+
+        const data = await response.json();
+
+        document.getElementById("matchup-content").innerHTML = `
+
+            <h3>${data.character} vs ${data.opponent}</h3>
+
+            <p>
+                <strong>Difficulty:</strong>
+                ${data.difficulty}
+            </p>
+
+            <h4>Overview</h4>
+            <ul>
+                ${data.overview.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Neutral</h4>
+            <ul>
+                ${data.neutral.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Anti Air</h4>
+            <ul>
+                ${data.antiAir.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Punishes</h4>
+            <ul>
+                ${data.punishes.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Safe Jumps</h4>
+            <ul>
+                ${data.safeJumps.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Meaties</h4>
+            <ul>
+                ${data.meaties.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Guard Cancel Notes</h4>
+            <ul>
+                ${data.guardCancel.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+            <h4>Notes</h4>
+            <ul>
+                ${data.notes.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+
+        `;
+
+    } catch (error) {
+
+        console.error(
+            "Matchup load failed:",
+            error
+        );
+
+    }
+
+});
+```
+
+}
+
+
 });

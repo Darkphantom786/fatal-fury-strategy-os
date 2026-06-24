@@ -134,3 +134,28 @@ button:hover {
     padding: 25px;
     color: #9ca3af;
 }
+
+#matchup-content {
+
+    margin-top: 15px;
+
+}
+
+#matchup-content h3 {
+
+    margin-bottom: 10px;
+
+}
+
+#matchup-content h4 {
+
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+}
+
+#matchup-content ul {
+
+    padding-left: 20px;
+
+}

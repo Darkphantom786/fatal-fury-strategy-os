@@ -1,0 +1,40 @@
+{
+  "character": "Marco",
+  "opponent": "Kain",
+  "difficulty": "6-4",
+
+  "overview": [
+    "Control mid range.",
+    "Avoid reckless jumps.",
+    "Force Kain to block meaty pressure."
+  ],
+
+  "neutral": [
+    "Use far B.",
+    "Use crouch D."
+  ],
+
+  "antiAir": [
+    "DP beats jump-ins."
+  ],
+
+  "punishes": [
+    "Blocked DP -> cl.C combo"
+  ],
+
+  "safeJumps": [
+    "Forward throw safe jump available."
+  ],
+
+  "meaties": [
+    "2B meaty beats mash."
+  ],
+
+  "guardCancel": [
+    "Delay pressure to bait GC."
+  ],
+
+  "notes": [
+    "Respect super meter."
+  ]
+}
