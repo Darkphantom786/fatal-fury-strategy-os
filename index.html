@@ -1,36 +1,44 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
+```
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fatal Fury Strategy OS</title>
 
 <link rel="stylesheet" href="css/style.css">
+```
 
-    
 </head>
 
 <body>
 
 <header class="header">
 
-    <h1>Fatal Fury Strategy OS</h1>
+```
+<h1>Fatal Fury Strategy OS</h1>
 
-    <p>Frame Data • Combos • Matchups • Punishes</p>
+<p>Frame Data • Combos • Matchups • Punishes</p>
+```
 
 </header>
 
 <main class="container">
 
-    <div id="character-info">
+```
+<div id="character-info">
     Loading Character Data...
 </div>
 
 <div id="moves-container">
 </div>
+
+<!-- FRAME KILL -->
+
 <div class="engine-box">
 
     <h2>Frame Kill Route Generator</h2>
@@ -46,12 +54,18 @@
 
     </button>
 
-    <div id="frameKillResults"
-         class="result-box">
+    <div
+        id="frameKillResults"
+        class="result-box">
 
         Waiting For Input...
 
     </div>
+
+</div>
+
+<!-- MEATY -->
+
 <div class="engine-box">
 
     <h2>Dynamic Meaty Engine</h2>
@@ -79,6 +93,11 @@
         Waiting For Input...
 
     </div>
+
+</div>
+
+<!-- SAFE JUMP -->
+
 <div class="engine-box">
 
     <h2>Safe Jump Engine</h2>
@@ -87,21 +106,22 @@
         type="number"
         id="safeJumpKnockdown"
         placeholder="Knockdown Frames">
+
     <select id="opponentSelect">
 
-    <option value="Terry Bogard">
-        Terry Bogard
-    </option>
+        <option value="Terry Bogard">
+            Terry Bogard
+        </option>
 
-    <option value="Rock Howard">
-        Rock Howard
-    </option>
+        <option value="Rock Howard">
+            Rock Howard
+        </option>
 
-    <option value="Kain Heinlein">
-        Kain Heinlein
-    </option>
+        <option value="Kain Heinlein">
+            Kain Heinlein
+        </option>
 
-</select>
+    </select>
 
     <input
         type="number"
@@ -121,13 +141,10 @@
         Waiting For Input...
 
     </div>
-<div class="engine-box">
 
-    <div class="engine-box">
-    <!-- Safe Jump Engine -->
 </div>
 
-<!-- YAHAN PASTE KARNA HAI -->
+<!-- GUARD CANCEL -->
 
 <div class="engine-box">
 
@@ -159,9 +176,10 @@
 
 </div>
 
+<!-- OPPONENT PROFILE -->
+
 <div class="engine-box">
-    <!-- Opponent Profile System -->
-</div>
+
     <h2>Opponent Profile System</h2>
 
     <select id="profileSelect">
@@ -193,7 +211,11 @@
         Waiting For Input...
 
     </div>
-    <div class="engine-box">
+
+</div>
+
+<!-- DUAL THREAT -->
+
 <div class="engine-box">
 
     <h2>Dual Threat Defense Matrix</h2>
@@ -208,8 +230,7 @@
         id="superStartup"
         placeholder="Fastest Super Startup">
 
-    <button
-        id="dualThreatButton">
+    <button id="dualThreatButton">
 
         Analyze Defense
 
@@ -224,6 +245,11 @@
     </div>
 
 </div>
+
+<!-- FALLBACK -->
+
+<div class="engine-box">
+
     <h2>Unknown Data Fallback System</h2>
 
     <select id="verificationSelect">
@@ -261,24 +287,32 @@
     </div>
 
 </div>
+```
 
-</div>
-</div>
-</div>
-</div>
 </main>
 
 <script src="js/database.js"></script>
+
 <script src="js/moves.js"></script>
+
 <script src="js/framekill.js"></script>
+
 <script src="js/meaty.js"></script>
-<script src="js/opponents.js"></script>
-<script src="js/guardcancel.js"></script>
-<script src="js/fallback.js"></script>
+
 <script src="js/safejump.js"></script>
+
+<script src="js/guardcancel.js"></script>
+
+<script src="js/fallback.js"></script>
+
+<script src="js/opponents.js"></script>
+
 <script src="js/profile.js"></script>
+
 <script src="js/profile-engine.js"></script>
+
 <script src="js/dualthreat.js"></script>
+
 <script src="js/app.js"></script>
 
 </body>
