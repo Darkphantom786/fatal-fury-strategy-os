@@ -110,4 +110,5 @@ initializeSafeJumpEngine();
 initializeGuardCancelEngine();
 initializeProfileEngine();
 initializeFallbackEngine();
+initializeDualThreatEngine();
 });
