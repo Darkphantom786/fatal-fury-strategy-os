@@ -1,0 +1,29 @@
+{
+  "verificationLevels": [
+
+    {
+      "status": "Verified",
+      "confidence": "100%",
+      "warning": "Tournament Safe"
+    },
+
+    {
+      "status": "Community Verified",
+      "confidence": "90%",
+      "warning": "Minor Testing Recommended"
+    },
+
+    {
+      "status": "Estimated",
+      "confidence": "70%",
+      "warning": "Training Mode Verification Recommended"
+    },
+
+    {
+      "status": "Unknown",
+      "confidence": "0%",
+      "warning": "Data Not Available"
+    }
+
+  ]
+}
