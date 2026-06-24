@@ -111,4 +111,5 @@ initializeGuardCancelEngine();
 initializeProfileEngine();
 initializeFallbackEngine();
 initializeDualThreatEngine();
+initializeSetupLibrary();
 });
