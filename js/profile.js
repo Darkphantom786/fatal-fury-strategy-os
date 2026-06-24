@@ -1,7 +1,6 @@
 async function loadProfiles() {
 
     return {
-
         profiles: [
 
             {
@@ -29,6 +28,6 @@ async function loadProfiles() {
             }
 
         ]
-
     };
+
 }
