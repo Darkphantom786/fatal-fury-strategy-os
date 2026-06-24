@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 const character = await loadCharacter("marco");
 const moveData = await loadMoves("marco");
 
-// Character Section
-
 if (!character) {
 
     document.getElementById("character-info").innerHTML =
@@ -41,8 +39,6 @@ if (!character) {
 
     `;
 }
-
-// Move Database
 
 if (!moveData) {
 
@@ -118,7 +114,7 @@ initializeMatchupHub();
 
 });
 
-async function initializeMatchupHub() {
+function initializeMatchupHub() {
 
 ```
 const select = document.getElementById("matchup-select");
@@ -132,7 +128,7 @@ select.addEventListener("change", async () => {
     try {
 
         const response =
-        await fetch(`data/matchups/${select.value}.json`);
+            await fetch(`data/matchups/${select.value}.json`);
 
         const data = await response.json();
 
@@ -140,50 +136,31 @@ select.addEventListener("change", async () => {
 
             <h3>${data.character} vs ${data.opponent}</h3>
 
-            <p>
-                <strong>Difficulty:</strong>
-                ${data.difficulty}
-            </p>
+            <p><strong>Difficulty:</strong> ${data.difficulty}</p>
 
             <h4>Overview</h4>
-            <ul>
-                ${data.overview.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.overview.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Neutral</h4>
-            <ul>
-                ${data.neutral.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.neutral.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Anti Air</h4>
-            <ul>
-                ${data.antiAir.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.antiAir.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Punishes</h4>
-            <ul>
-                ${data.punishes.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.punishes.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Safe Jumps</h4>
-            <ul>
-                ${data.safeJumps.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.safeJumps.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Meaties</h4>
-            <ul>
-                ${data.meaties.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.meaties.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Guard Cancel Notes</h4>
-            <ul>
-                ${data.guardCancel.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.guardCancel.map(item => `<li>${item}</li>`).join("")}</ul>
 
             <h4>Notes</h4>
-            <ul>
-                ${data.notes.map(item => `<li>${item}</li>`).join("")}
-            </ul>
+            <ul>${data.notes.map(item => `<li>${item}</li>`).join("")}</ul>
 
         `;
 
