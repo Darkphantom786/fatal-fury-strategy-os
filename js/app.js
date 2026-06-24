@@ -104,13 +104,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
-    initializeFrameKillEngine();
-
+initializeFrameKillEngine();
 initializeMeatyEngine();
-
 initializeSafeJumpEngine();
-
 initializeGuardCancelEngine();
-
 initializeProfileEngine();
+initializeFallbackEngine();
 });
