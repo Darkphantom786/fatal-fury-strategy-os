@@ -1,19 +1,16 @@
 async function loadSetupLibrary() {
 
-```
 const response =
     await fetch(
         "./data/setup-library.json"
     );
 
 return await response.json();
-```
 
 }
 
 function initializeSetupLibrary() {
 
-```
 const button =
     document.getElementById(
         "saveSetupButton"
@@ -71,6 +68,5 @@ button.addEventListener(
 console.log(
     "Setup Library System Ready"
 );
-```
 
 }
