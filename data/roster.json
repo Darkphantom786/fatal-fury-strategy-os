@@ -1,0 +1,116 @@
+{
+  "characters": [
+    {
+      "id": "marco",
+      "name": "Marco Rodrigues"
+    },
+    {
+      "id": "terry",
+      "name": "Terry Bogard"
+    },
+    {
+      "id": "rock",
+      "name": "Rock Howard"
+    },
+    {
+      "id": "mai",
+      "name": "Mai Shiranui"
+    },
+    {
+      "id": "b-jenet",
+      "name": "B. Jenet"
+    },
+    {
+      "id": "billy",
+      "name": "Billy Kane"
+    },
+    {
+      "id": "gato",
+      "name": "Gato"
+    },
+    {
+      "id": "hotaru",
+      "name": "Hotaru Futaba"
+    },
+    {
+      "id": "tizoc",
+      "name": "Tizoc"
+    },
+    {
+      "id": "kain",
+      "name": "Kain R. Heinlein"
+    },
+    {
+      "id": "hokutomaru",
+      "name": "Hokutomaru"
+    },
+    {
+      "id": "kevin",
+      "name": "Kevin Rian"
+    },
+    {
+      "id": "kim",
+      "name": "Kim Dong Hwan"
+    },
+    {
+      "id": "preecha",
+      "name": "Preecha"
+    },
+    {
+      "id": "vox",
+      "name": "Vox Reaper"
+    },
+    {
+      "id": "salvatore",
+      "name": "Salvatore Ganacci"
+    },
+    {
+      "id": "cristiano",
+      "name": "Cristiano Ronaldo"
+    },
+    {
+      "id": "andy",
+      "name": "Andy Bogard"
+    },
+    {
+      "id": "joe",
+      "name": "Joe Higashi"
+    },
+    {
+      "id": "ken",
+      "name": "Ken Masters"
+    },
+    {
+      "id": "chunli",
+      "name": "Chun-Li"
+    },
+    {
+      "id": "mrbig",
+      "name": "Mr. Big"
+    },
+    {
+      "id": "kenshiro",
+      "name": "Kenshiro"
+    },
+    {
+      "id": "kimjaehoon",
+      "name": "Kim Jae Hoon"
+    },
+    {
+      "id": "nightmare-geese",
+      "name": "Nightmare Geese"
+    },
+    {
+      "id": "bluemary",
+      "name": "Blue Mary"
+    },
+    {
+      "id": "krauser",
+      "name": "Wolfgang Krauser"
+    },
+    {
+      "id": "mrkarate",
+      "name": "Mr. Karate"
+    }
+  ]
+}
