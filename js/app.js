@@ -157,9 +157,7 @@ async function initializeMatchupHub() {
             try {
 
                 const response =
-                    await fetch(
-                        `data/matchups/${player}/${enemy}.json`
-                    );
+                    await fetch(`data/matchups/${player}-vs-${enemy}.json`);
 
                 const matchup =
                     await response.json();
