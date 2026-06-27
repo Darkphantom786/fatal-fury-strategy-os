@@ -1,3 +1,5 @@
+console.log("SETUP LIBRARY LOADED");
+
 async function loadSetupLibrary() {
 
 const response =
