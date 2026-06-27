@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
-```
 const character = await loadCharacter("marco");
 const moveData = await loadMoves("marco");
 
@@ -110,13 +109,11 @@ initializeFallbackEngine();
 initializeDualThreatEngine();
 initializeSetupLibrary();
 initializeMatchupHub();
-```
 
 });
 
 function initializeMatchupHub() {
 
-```
 const select = document.getElementById("matchup-select");
 
 if (!select) return;
@@ -171,6 +168,5 @@ select.addEventListener("change", async () => {
     }
 
 });
-```
 
 }
