@@ -112,61 +112,110 @@ initializeMatchupHub();
 
 });
 
-function initializeMatchupHub() {
+async function initializeMatchupHub() {
 
-const select = document.getElementById("matchup-select");
+    const roster = await fetch("./data/roster.json");
+    const data = await roster.json();
 
-if (!select) return;
+    const character =
+        document.getElementById("character-select");
 
-select.addEventListener("change", async () => {
+    const opponent =
+        document.getElementById("opponent-select");
 
-    if (!select.value) return;
+    data.characters.forEach(c => {
 
-    try {
+        character.innerHTML +=
+            `<option value="${c.id}">${c.name}</option>`;
 
-        const response =
-            await fetch(`data/matchups/${select.value}.json`);
+        opponent.innerHTML +=
+            `<option value="${c.id}">${c.name}</option>`;
 
-        const data = await response.json();
+    });
 
-        document.getElementById("matchup-content").innerHTML = `
+    document
+        .getElementById("load-matchup")
+        .addEventListener("click", async () => {
 
-            <h3>${data.character} vs ${data.opponent}</h3>
+            const player =
+                character.value;
 
-            <p><strong>Difficulty:</strong> ${data.difficulty}</p>
+            const enemy =
+                opponent.value;
 
-            <h4>Overview</h4>
-            <ul>${data.overview.map(item => `<li>${item}</li>`).join("")}</ul>
+            if (player === enemy) {
 
-            <h4>Neutral</h4>
-            <ul>${data.neutral.map(item => `<li>${item}</li>`).join("")}</ul>
+                document
+                    .getElementById("matchup-content")
+                    .innerHTML =
+                    "Select different characters.";
 
-            <h4>Anti Air</h4>
-            <ul>${data.antiAir.map(item => `<li>${item}</li>`).join("")}</ul>
+                return;
 
-            <h4>Punishes</h4>
-            <ul>${data.punishes.map(item => `<li>${item}</li>`).join("")}</ul>
+            }
 
-            <h4>Safe Jumps</h4>
-            <ul>${data.safeJumps.map(item => `<li>${item}</li>`).join("")}</ul>
+            try {
 
-            <h4>Meaties</h4>
-            <ul>${data.meaties.map(item => `<li>${item}</li>`).join("")}</ul>
+                const response =
+                    await fetch(
+                        `data/matchups/${player}/${enemy}.json`
+                    );
 
-            <h4>Guard Cancel Notes</h4>
-            <ul>${data.guardCancel.map(item => `<li>${item}</li>`).join("")}</ul>
+                const matchup =
+                    await response.json();
 
-            <h4>Notes</h4>
-            <ul>${data.notes.map(item => `<li>${item}</li>`).join("")}</ul>
+                document
+                    .getElementById("matchup-content")
+                    .innerHTML = `
 
-        `;
+<h2>${matchup.character} vs ${matchup.opponent}</h2>
 
-    } catch (error) {
+<p><strong>Difficulty:</strong> ${matchup.difficulty}</p>
 
-        console.error("Matchup load failed:", error);
+<h3>Overview</h3>
 
-    }
+<ul>
 
-});
+${matchup.overview.map(x => `<li>${x}</li>`).join("")}
+
+</ul>
+
+<h3>Neutral</h3>
+
+<ul>
+
+${matchup.neutral.map(x => `<li>${x}</li>`).join("")}
+
+</ul>
+
+<h3>Punishes</h3>
+
+<ul>
+
+${matchup.punishes.map(x => `<li>${x}</li>`).join("")}
+
+</ul>
+
+<h3>Notes</h3>
+
+<ul>
+
+${matchup.notes.map(x => `<li>${x}</li>`).join("")}
+
+</ul>
+
+`;
+
+            } catch {
+
+                document
+                    .getElementById("matchup-content")
+                    .innerHTML =
+
+                    "<h3>Matchup Not Available Yet</h3>";
+
+            }
+
+        });
 
 }
