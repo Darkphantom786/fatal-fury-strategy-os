@@ -100,15 +100,25 @@ if (!moveData) {
     `;
 }
 
-initializeFrameKillEngine();
-initializeMeatyEngine();
-initializeSafeJumpEngine();
-initializeGuardCancelEngine();
-initializeProfileEngine();
-initializeFallbackEngine();
-initializeDualThreatEngine();
-initializeSetupLibrary();
-initializeMatchupHub();
+StrategyOS.register(initializeFrameKillEngine);
+
+StrategyOS.register(initializeMeatyEngine);
+
+StrategyOS.register(initializeSafeJumpEngine);
+
+StrategyOS.register(initializeGuardCancelEngine);
+
+StrategyOS.register(initializeProfileEngine);
+
+StrategyOS.register(initializeFallbackEngine);
+
+StrategyOS.register(initializeDualThreatEngine);
+
+StrategyOS.register(initializeSetupLibrary);
+
+StrategyOS.register(initializeMatchupHub);
+
+StrategyOS.initialize();
 
 });
 
