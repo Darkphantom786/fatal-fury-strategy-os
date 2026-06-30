@@ -15,6 +15,7 @@ class DatabaseEngine {
             const marco = await response.json();
 
             this.characters["marco"] = marco;
+            console.log(marco);
 
             console.log("Database Engine Ready");
 
