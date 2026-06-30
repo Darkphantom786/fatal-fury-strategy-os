@@ -1,85 +1,47 @@
-import DatabaseConfig from "../config/database-config.js";
-
 class DatabaseEngine {
 
     constructor() {
 
-        this.database = {
-            characters: {},
-            matchups: {},
-            mechanics: {},
-            setups: {},
-            patches: {},
-            validation: {}
-        };
-
-        this.initialized = false;
+        this.cache = new Map();
 
     }
 
-    async initialize() {
+    async load(path) {
 
-        if (this.initialized) {
-            return;
+        if (this.cache.has(path)) {
+
+            return this.cache.get(path);
+
         }
 
-        console.log("================================");
-        console.log("Strategy OS Database Engine");
-        console.log("Loading Database...");
-        console.log("================================");
+        try {
 
-        await this.loadCharacters();
+            const response = await fetch(path);
 
-        this.initialized = true;
+            const data = await response.json();
 
-        console.log("Database Loaded Successfully.");
+            this.cache.set(path, data);
 
-    }
+            return data;
 
-    async loadJSON(path) {
-
-        const response = await fetch(path);
-
-        if (!response.ok) {
-            throw new Error(`Failed to load ${path}`);
         }
 
-        return await response.json();
+        catch (error) {
 
-    }
+            console.error("Database Load Error:", error);
 
-    async loadCharacters() {
-
-        for (const character of DatabaseConfig.supportedCharacters) {
-
-            this.database.characters[character] = {
-
-                character: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/character.json`),
-
-                movement: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/movement.json`),
-
-                normals: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/normals.json`),
-
-                specials: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/specials.json`),
-
-                supers: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/supers.json`),
-
-                throws: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/throws.json`)
-
-            };
+            return null;
 
         }
 
     }
 
-    getCharacter(name) {
+    clearCache() {
 
-        return this.database.characters[name.toLowerCase()] || null;
+        this.cache.clear();
 
     }
 
 }
 
-const databaseEngine = new DatabaseEngine();
-
-export default databaseEngine;
+window.DatabaseEngine = new DatabaseEngine();
