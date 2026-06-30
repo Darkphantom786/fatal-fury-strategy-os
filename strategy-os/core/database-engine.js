@@ -10,7 +10,7 @@ class DatabaseEngine {
 
         try {
 
-            const response = await fetch("../database/characters/marco/character.json");
+            const response = await fetch("../../data/characters/marco.json");
 
             const marco = await response.json();
 
