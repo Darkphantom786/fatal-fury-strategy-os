@@ -2,21 +2,53 @@
   "id": "marco",
   "name": "Marco Rodrigues",
   "game": "Fatal Fury: City of the Wolves",
+  "version": "1.0",
 
   "profile": {
-    "style": "Kyokugen Karate",
-    "difficulty": "Intermediate"
+    "style": "Rushdown",
+    "difficulty": "Intermediate",
+    "health": 1000,
+    "stun": 1000,
+    "guardGauge": 100
+  },
+
+  "movement": {
+    "walkForward": 0.055,
+    "walkBackward": 0.042,
+    "dashSpeed": 0.095,
+    "backdash": 24,
+    "jumpStartup": 4,
+    "jumpDuration": 40
+  },
+
+  "attributes": {
+    "height": "Unknown",
+    "weight": "Unknown",
+    "archetype": "Rushdown",
+    "range": "Medium",
+    "mobility": "High",
+    "execution": "Medium"
   },
 
   "strengths": [
-    "Strong Pressure",
-    "Excellent Damage",
-    "Reliable Anti-Air",
-    "Good Corner Carry"
+    "Excellent pressure",
+    "Strong corner carry",
+    "High damage",
+    "Fast normals"
   ],
 
   "weaknesses": [
-    "Requires Matchup Knowledge",
-    "Can Struggle Against Zoning"
-  ]
+    "Limited projectile game",
+    "Requires close range",
+    "Can struggle against zoning"
+  ],
+
+  "engines": {
+    "frameKill": true,
+    "meaty": true,
+    "safeJump": true,
+    "guardCancel": true,
+    "autoPunish": true,
+    "matchupHub": true
+  }
 }
