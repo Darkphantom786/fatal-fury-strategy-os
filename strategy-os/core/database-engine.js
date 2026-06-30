@@ -1,3 +1,5 @@
+import DatabaseConfig from "../config/database-config.js";
+
 class DatabaseEngine {
 
     constructor() {
@@ -21,41 +23,59 @@ class DatabaseEngine {
             return;
         }
 
-        console.log("==================================");
+        console.log("================================");
         console.log("Strategy OS Database Engine");
-        console.log("Initializing...");
-        console.log("==================================");
+        console.log("Loading Database...");
+        console.log("================================");
+
+        await this.loadCharacters();
 
         this.initialized = true;
 
+        console.log("Database Loaded Successfully.");
+
     }
 
-    getDatabase() {
-        return this.database;
+    async loadJSON(path) {
+
+        const response = await fetch(path);
+
+        if (!response.ok) {
+            throw new Error(`Failed to load ${path}`);
+        }
+
+        return await response.json();
+
     }
 
-    getCharacters() {
-        return this.database.characters;
+    async loadCharacters() {
+
+        for (const character of DatabaseConfig.supportedCharacters) {
+
+            this.database.characters[character] = {
+
+                character: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/character.json`),
+
+                movement: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/movement.json`),
+
+                normals: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/normals.json`),
+
+                specials: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/specials.json`),
+
+                supers: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/supers.json`),
+
+                throws: await this.loadJSON(`${DatabaseConfig.database.characters}${character}/throws.json`)
+
+            };
+
+        }
+
     }
 
-    getMatchups() {
-        return this.database.matchups;
-    }
+    getCharacter(name) {
 
-    getMechanics() {
-        return this.database.mechanics;
-    }
+        return this.database.characters[name.toLowerCase()] || null;
 
-    getSetups() {
-        return this.database.setups;
-    }
-
-    getPatches() {
-        return this.database.patches;
-    }
-
-    getValidation() {
-        return this.database.validation;
     }
 
 }
