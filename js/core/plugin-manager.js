@@ -57,6 +57,4 @@ class PluginManager {
 
 const pluginManager = new PluginManager();
 
-const pluginManager = new PluginManager();
-
 window.pluginManager = pluginManager;
