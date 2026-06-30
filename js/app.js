@@ -117,6 +117,7 @@ StrategyOS.register(initializeDualThreatEngine);
 StrategyOS.register(initializeSetupLibrary);
 
 StrategyOS.register(initializeMatchupHub);
+StrategyOS.register(initializeAutoPunishFinder);
 
 StrategyOS.initialize();
 
