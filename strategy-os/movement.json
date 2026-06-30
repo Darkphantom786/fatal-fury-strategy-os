@@ -1,0 +1,51 @@
+{
+  "character": "Marco",
+
+  "walk": {
+    "forwardSpeed": null,
+    "backSpeed": null
+  },
+
+  "dash": {
+    "type": "run",
+    "startup": null,
+    "duration": null,
+    "cancelable": false
+  },
+
+  "jump": {
+    "startup": null,
+    "preJumpFrames": null,
+
+    "forward": {
+      "totalFrames": null,
+      "distance": null
+    },
+
+    "back": {
+      "totalFrames": null,
+      "distance": null
+    },
+
+    "neutral": {
+      "totalFrames": null
+    }
+  },
+
+  "air": {
+    "airDash": false,
+    "doubleJump": false
+  },
+
+  "wakeUp": {
+    "normal": null,
+    "backRoll": null,
+    "frontRoll": null
+  },
+
+  "throwEscape": {
+    "frames": null
+  },
+
+  "notes": ""
+}
